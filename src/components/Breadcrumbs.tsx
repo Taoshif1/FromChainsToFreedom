@@ -34,7 +34,7 @@ const Breadcrumbs = ({ items, light = false }: BreadcrumbsProps) => {
                 <Link 
                   to={item.path}
                   className={`hover:underline ${
-                    light ? 'text-green-500/80 hover:text-white' : 'text-neutral-500 hover:text-primary-600'
+                    light ? 'text-white/80 hover:text-white' : 'text-neutral-500 hover:text-primary-600'
                   }`}
                 >
                   {item.label}
