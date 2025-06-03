@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-neutral-50 text-neutral-800 font-georgia;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-opensans font-semibold;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  p {
+    @apply leading-relaxed mb-4;
+  }
+  
+  a {
+    @apply text-primary-600 hover:text-primary-700 transition duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-opensans font-semibold transition duration-200 inline-flex items-center justify-center;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-600 text-white hover:bg-secondary-700;
+  }
+  
+  .btn-outline {
+    @apply border border-neutral-300 bg-white hover:bg-neutral-100;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .event-card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden border border-neutral-200 hover:shadow-lg transition duration-200;
+  }
+  
+  .timeline-marker {
+    @apply w-4 h-4 rounded-full bg-primary-600 border-2 border-white;
+  }
+  
+  .timeline-line {
+    @apply absolute h-0.5 bg-neutral-300 top-1/2 transform -translate-y-1/2;
+  }
+}
