@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2 text-xl font-semibold">
               <Flag className="h-6 w-6 text-secondary-600" />
-              <span className="text-white">Bangladesh Independence</span>
+              <span className="text-white"> From Chains To Freedom</span>
             </div>
             <p className="text-neutral-300 text-sm font-georgia"> {/* Assuming you want Georgia for this descriptive text */}
               Exploring the key historical events from 1948 to 1971 that led to the independence of Bangladesh.
@@ -80,8 +80,8 @@ const Footer = () => {
             4. Place your bolt-logo.png (or .svg) into public/images/.
             5. Update the src attribute below to "/images/your-bolt-logo-filename.png".
           */}
-          <img 
-            src="\public\images\black_circle_360x360.png" // ACTION: Replace with the actual path to your Bolt logo
+          <img  
+            src="/images/white_circle.png" 
             alt="Bolt Logo" 
             className="h-10 w-auto mx-auto mb-2" // Adjust size as needed
           />
@@ -92,7 +92,7 @@ const Footer = () => {
         
         <div className="border-t border-neutral-700 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-neutral-400 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} The Path to Independence. All rights reserved.
+            &copy; {currentYear} From Chains To Freedom. All rights reserved.
           </p>
           <div className="flex items-center space-x-2 text-neutral-400 text-sm">
             <span>Created with</span>
