@@ -115,7 +115,7 @@ export const eventsData = [
     title: "1970 Election Win",
     date: "December 7, 1970",
     summary: "The Awami League, led by Sheikh Mujibur Rahman, won a landslide victory in Pakistan's first general election, securing an absolute majority in the National Assembly, which strengthened East Pakistan's demand for autonomy.",
-    imageUrl: "https://images.pexels.com/photos/8469935/pexels-photo-8469935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/images/hs6.png",
     content: [
       "Pakistan's first general election was held on December 7, 1970, under the Legal Framework Order issued by General Yahya Khan's military government. The election was significant as it was the first based on universal adult franchise in Pakistan's history.",
       "The Awami League, led by Sheikh Mujibur Rahman, campaigned on the platform of the Six Points and regional autonomy for East Pakistan. In a landslide victory, the Awami League won 160 out of 162 seats allocated to East Pakistan in the 300-seat National Assembly, and 288 out of 300 seats in the East Pakistan Provincial Assembly.",
