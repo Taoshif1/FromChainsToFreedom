@@ -1,19 +1,12 @@
-import { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronLeft, ChevronRight, XCircle } from 'lucide-react'; // Added XCircle for closing popup
+import { useState, useRef } from 'react'; // Removed useEffect as handleClickOutside is removed
+import { useNavigate } from 'react-router-dom'; // Imported useNavigate
+import { ChevronLeft, ChevronRight } from 'lucide-react'; // XCircle and ArrowRight removed from here
 import { eventsData } from '../data/eventsData'; // Ensure this path is correct
 
 const TimelinePage = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
-  const [activeEventId, setActiveEventId] = useState<string | null>(null);
-  // scrollPosition state might not be strictly necessary for functionality if not used elsewhere
-  // const [scrollPosition, setScrollPosition] = useState(0); 
-
-  // const handleScroll = () => {
-  //   if (timelineRef.current) {
-  //     setScrollPosition(timelineRef.current.scrollLeft);
-  //   }
-  // };
+  const [hoveredEventId, setHoveredEventId] = useState<string | null>(null);
+  const navigate = useNavigate(); // Hook for navigation
 
   const scrollLeft = () => {
     if (timelineRef.current) {
@@ -27,32 +20,11 @@ const TimelinePage = () => {
     }
   };
 
-  // Optional: Close popup if clicked outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      // A more robust check might be needed if popups are complex
-      // For now, this closes if click is not on a marker or within a popup structure
-      const target = event.target as HTMLElement;
-      if (activeEventId && !target.closest('.timeline-event-popup') && !target.closest('.timeline-marker')) {
-        setActiveEventId(null);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [activeEventId]);
-
-
-  // Ensure we only use the 12 events you specified, assuming eventsData has them in order.
-  // If eventsData might contain more, you might want to slice it:
-  // const displayEvents = eventsData.slice(0, 12);
-  // For now, assuming eventsData IS the 12 events.
-  const displayEvents = eventsData;
-
+  // Assuming eventsData contains your 12 key events in chronological order
+  const displayEvents = eventsData; 
 
   return (
-    <div className="animate-fade-in font-opensans"> {/* Applied base font */}
+    <div className="animate-fade-in font-opensans">
       {/* Header */}
       <section className="bg-primary-700 text-white py-16">
         <div className="container-custom">
@@ -63,92 +35,90 @@ const TimelinePage = () => {
         </div>
       </section>
       
-      {/* Timeline */}
-      <section className="py-16 bg-white">
+      {/* Timeline Section */}
+      <section className="py-16 bg-white overflow-hidden">
         <div className="container-custom">
-          <div className="relative group"> {/* Added group for button visibility on hover */}
-            {/* Scroll Controls - visible on hover of the timeline container */}
+          <div className="relative group">
+            {/* Scroll Controls */}
             <button 
               onClick={scrollLeft} 
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 -ml-4 md:-ml-6 z-20 bg-white rounded-full p-2 shadow-lg hover:bg-neutral-100 transition opacity-0 group-hover:opacity-100 focus:opacity-100"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 -ml-2 sm:-ml-4 z-20 bg-white rounded-full p-2 shadow-lg hover:bg-neutral-100 transition opacity-0 group-hover:opacity-100 focus:opacity-100"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="h-6 w-6 text-primary-600" />
+              <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-primary-600" />
             </button>
             
             <button 
               onClick={scrollRight} 
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 -mr-4 md:-mr-6 z-20 bg-white rounded-full p-2 shadow-lg hover:bg-neutral-100 transition opacity-0 group-hover:opacity-100 focus:opacity-100"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 -mr-2 sm:-mr-4 z-20 bg-white rounded-full p-2 shadow-lg hover:bg-neutral-100 transition opacity-0 group-hover:opacity-100 focus:opacity-100"
               aria-label="Scroll right"
             >
-              <ChevronRight className="h-6 w-6 text-primary-600" />
+              <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-primary-600" />
             </button>
             
             {/* Timeline Track */}
             <div 
               ref={timelineRef}
-              className="relative overflow-x-auto pb-10 pt-20 px-4 hide-scrollbar" // Increased top padding for popups
-              style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }} // For iOS momentum scroll
+              className="relative overflow-x-auto pb-10 pt-24 px-4 hide-scrollbar"
+              style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}
             >
               {/* The visual line */}
-              <div className="absolute top-1/2 left-0 right-0 h-1 bg-neutral-300 transform -translate-y-1/2"></div>
+              <div className="absolute top-1/2 left-0 right-0 h-[3px] bg-neutral-300 transform -translate-y-1/2"></div>
               
-              <div className="flex space-x-24 sm:space-x-32 md:space-x-40 lg:space-x-48 relative min-w-max"> {/* Increased spacing */}
+              <div className="flex space-x-28 sm:space-x-36 md:space-x-44 lg:space-x-52 relative min-w-max px-8">
                 {displayEvents.map((event, index) => (
-                  <div key={event.id} className="flex flex-col items-center relative pt-6"> {/* Added pt-6 for spacing */}
-                    {/* Timeline Marker Dot */}
+                  <div 
+                    key={event.id} 
+                    className="flex flex-col items-center relative pt-6 z-10"
+                    onMouseEnter={() => setHoveredEventId(event.id)}
+                    onMouseLeave={() => setHoveredEventId(null)}
+                  >
+                    {/* Timeline Marker Dot - Interactive Area */}
                     <div 
-                      className={`timeline-marker w-5 h-5 cursor-pointer z-10 transition-all duration-300 ease-in-out border-4 border-white shadow-md ${
-                        activeEventId === event.id ? 'scale-125 bg-secondary-600 ring-2 ring-secondary-500 ring-offset-2' : 'bg-primary-600 hover:bg-primary-700'
-                      }`}
-                      onClick={(e) => {
-                        e.stopPropagation(); // Prevent click from bubbling to document for closing
-                        setActiveEventId(activeEventId === event.id ? null : event.id);
-                      }}
-                      title={event.title} // Tooltip for accessibility
-                    ></div>
-                    
-                    {/* Event Info Container - positioned above or below the line */}
-                    <div 
-                      className={`absolute w-64 text-center transform -translate-x-1/2 ${
-                        index % 2 === 0 ? 'bottom-full mb-5' : 'top-full mt-5' // Alternating position
-                      }`}
+                      className={`timeline-marker-interactive w-6 h-6 rounded-full cursor-pointer transition-all duration-300 ease-in-out flex items-center justify-center
+                        ${hoveredEventId === event.id 
+                          ? 'bg-secondary-600 scale-125 ring-2 ring-secondary-500 ring-offset-2 shadow-xl' 
+                          : 'bg-primary-600 hover:bg-primary-700 hover:scale-110 shadow-md'
+                        }`
+                      }
+                      onClick={() => navigate(`/events/${event.slug}`)} // Navigate on click
+                      title={`Click to read more about: ${event.title}`} 
                     >
-                      <div className="text-xs font-semibold text-secondary-600 mb-1">{event.date}</div>
-                      <div className="font-semibold text-sm text-primary-800">{event.title}</div>
-                      
-                      {/* Event Popup - Enhanced */}
-                      {activeEventId === event.id && (
-                        <div 
-                          className="timeline-event-popup absolute left-1/2 transform -translate-x-1/2 mt-3 w-72 bg-white p-4 rounded-lg shadow-xl border border-neutral-200 z-30 animate-fade-in"
-                          onClick={(e) => e.stopPropagation()} // Prevent click from bubbling to document
-                        >
-                          <button 
-                            onClick={() => setActiveEventId(null)}
-                            className="absolute top-2 right-2 text-neutral-400 hover:text-neutral-600"
-                            aria-label="Close popup"
-                          >
-                            <XCircle size={20} />
-                          </button>
-                          {event.imageUrl && (
-                            <img 
-                              src={event.imageUrl} 
-                              alt={event.title} 
-                              className="w-full h-32 object-cover rounded-md mb-3" 
-                            />
-                          )}
-                          <h4 className="font-bold text-md text-primary-700 mb-1">{event.title}</h4>
-                          <p className="text-xs text-neutral-600 mb-3 leading-snug line-clamp-3">{event.summary}</p>
-                          <Link 
-                            to={`/events/${event.slug}`} 
-                            className="inline-flex items-center text-xs text-primary-600 hover:text-primary-700 font-semibold"
-                          >
-                            Read more
-                            <ArrowRight className="ml-1 h-3 w-3" />
-                          </Link>
-                        </div>
-                      )}
+                       <div className="w-3 h-3 bg-white rounded-full"></div>
                     </div>
+                    
+                    {/* Event Info Container (Date & Title) - always visible */}
+                    <div 
+                      className={`absolute w-60 text-center transform -translate-x-1/2 select-none pointer-events-none 
+                        ${index % 2 === 0 ? 'bottom-full mb-4' : 'top-full mt-4'}
+                      `}
+                    >
+                      <div 
+                        className="text-xs font-semibold text-secondary-700 mb-1 cursor-pointer hover:underline"
+                        onClick={(e) => { e.stopPropagation(); navigate(`/events/${event.slug}`);}} // Make date clickable & stop propagation
+                      >
+                        {event.date}
+                      </div>
+                      <div 
+                        className="font-semibold text-xs text-primary-800 line-clamp-2 cursor-pointer hover:underline"
+                        onClick={(e) => { e.stopPropagation(); navigate(`/events/${event.slug}`);}} // Make title clickable & stop propagation
+                      >
+                        {event.title}
+                      </div>
+                    </div>
+                      
+                    {/* Event Popup on Hover - Simplified (No Image, No "Read More" Link) */}
+                    {hoveredEventId === event.id && (
+                      <div 
+                        className={`timeline-event-popup absolute left-1/2 transform -translate-x-1/2 w-64 bg-white p-3 rounded-lg shadow-xl border border-neutral-200 z-30 animate-fade-in
+                          ${index % 2 === 0 ? 'bottom-full mb-20' : 'top-full mt-20'} 
+                        `} // Adjusted positioning for hover popup
+                      >
+                        <h4 className="font-bold text-sm text-primary-700 mb-1 font-opensans">{event.title}</h4>
+                        <p className="text-xs text-neutral-700 leading-snug line-clamp-4 font-georgia">{event.summary}</p>
+                        {/* "Read more" link and XCircle button removed from hover popup */}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -188,11 +158,12 @@ const TimelinePage = () => {
             <div>
               <h3 className="text-xl mb-4 text-primary-700">How to Use</h3>
               <p className="mb-4 font-georgia text-sm">
-                Click on any event marker (dot) on the timeline to view a brief summary and an image related to the event.
+                Hover over any event marker (dot) on the timeline to view a brief summary of the event.
+                Click on an event marker, its date, or its title to navigate to the detailed event page.
                 Use the arrow buttons on the sides (visible when you hover over the timeline area) or swipe/scroll horizontally to navigate through the events.
               </p>
               <p className="font-georgia text-sm">
-                Events are arranged chronologically from left to right. The information cards alternate positions (above/below the line) for better readability.
+                Events are arranged chronologically from left to right. The event titles and dates alternate positions (above/below the line) for better readability.
               </p>
             </div>
           </div>
