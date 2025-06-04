@@ -1,8 +1,8 @@
 # From Chains To Freedom: Bangladesh's Journey to Independence
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_NETLIFY_SITE_ID/deploy-status)](https://app.netlify.com/sites/fromchainstofreedom/deploys) <!-- Optional: Replace YOUR_NETLIFY_SITE_ID with your actual Netlify site ID for a deploy status badge -->
+[![Netlify Status](https://api.netlify.com/api/v1/badges/taoshiflex/deploy-status)](https://app.netlify.com/sites/fromchainstofreedom/deploys) <!-- Optional: Replace YOUR_NETLIFY_SITE_ID with your actual Netlify site ID for a deploy status badge -->
 
-**Live Website:** [https://fromchainstofreedom.netlify.app/](https://fromchainstofreedom.netlify.app/)
+**Live Website:** [https://fromchainstofreedom.netlify.app/]([https://fromchainstofreedom.netlify.app/](https://startling-pavlova-74c5c3.netlify.app/))
 
 "From Chains To Freedom" is an interactive React-based website meticulously designed to illuminate the pivotal and often underrepresented historical events that defined Bangladesh's arduous journey to independence, focusing on the period from 1948 to 1971. Our project moves beyond surface-level narratives, offering an immersive educational platform that delves into the human cost of colonial legacies, the fervent passion of the Language Movement, the impact of systemic oppression, and the stark realities of the 1971 Liberation War and genocide.
 
