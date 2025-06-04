@@ -141,10 +141,10 @@ export const eventsData = [
   {
     id: "event6",
     slug: "1971-parliament-postponed",
-    title: "Parliament Postponed (March 1, 1971)",
+    title: "Parliament Postponed (March 3, 1971)",
     date: "March 1, 1971",
     summary: "President Yahya Khan indefinitely postponed the National Assembly session that would have formalized Sheikh Mujibur Rahman's election victory, triggering immediate protests and a non-cooperation movement throughout East Pakistan.",
-    imageUrl: "https://images.pexels.com/photos/8885012/pexels-photo-8885012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/images/hs7.jpg",
     content: [
       "On March 1, 1971, President Yahya Khan made a fateful announcement that he was indefinitely postponing the National Assembly session scheduled for March 3. This session would have formalized Sheikh Mujibur Rahman's election victory and initiated the process of drafting a new constitution based on the Awami League's Six Points.",
       "The postponement came after weeks of political negotiations during which Zulfikar Ali Bhutto had refused to attend the assembly unless the Awami League modified its autonomy demands. The military government sided with West Pakistani interests, using Bhutto's refusal as a pretext to delay the assembly.",
@@ -173,7 +173,7 @@ export const eventsData = [
     title: "Bangabandhu's Speech (March 7, 1971)",
     date: "March 7, 1971",
     summary: "Sheikh Mujibur Rahman delivered his historic speech at Race Course Ground in Dhaka, effectively declaring a path to independence with his famous words, 'The struggle this time is for our liberation, the struggle this time is for our independence.'",
-    imageUrl: "https://images.pexels.com/photos/6147369/pexels-photo-6147369.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/images/hs8.png",
     content: [
       "On March 7, 1971, Sheikh Mujibur Rahman addressed a massive gathering of nearly one million people at Race Course Ground (now Suhrawardy Udyan) in Dhaka. This speech came at a critical moment when negotiations with the Pakistani government had broken down, and tensions were escalating following the postponement of the National Assembly.",
       "In his 19-minute speech, delivered without notes, Bangabandhu outlined the history of East Pakistan's exploitation and the recent events that had brought the country to the brink of independence. He provided directives for the non-cooperation movement and prepared the population for a potential armed struggle.",
@@ -202,7 +202,7 @@ export const eventsData = [
     title: "Operation Searchlight (March 25, 1971)",
     date: "March 25, 1971",
     summary: "The Pakistani military launched Operation Searchlight, a planned military operation to suppress the Bengali nationalist movement, resulting in mass killings of civilians, intellectuals, and students, and marking the beginning of the Bangladesh genocide.",
-    imageUrl: "https://images.pexels.com/photos/1646161/pexels-photo-1646161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/images/hs9.png",
     content: [
       "On the night of March 25, 1971, the Pakistani military launched Operation Searchlight, a planned military pacification campaign designed to suppress the Bengali nationalist movement in East Pakistan. The operation began around midnight after President Yahya Khan, who had been engaged in negotiations with Sheikh Mujibur Rahman, secretly left Dhaka earlier that day.",
       "Pakistani forces targeted key sites in Dhaka, including Dhaka University, which was seen as a hotbed of nationalist sentiment. Students and faculty were killed, and university buildings were damaged or destroyed. The operation also targeted Hindu areas, political leaders, Bengali police and military personnel, and intellectuals.",
@@ -235,7 +235,7 @@ export const eventsData = [
     title: "Declaration of Independence (March 26, 1971)",
     date: "March 26, 1971",
     summary: "Following the military crackdown, Sheikh Mujibur Rahman declared Bangladesh's independence before his arrest, which was broadcast via radio by Major Ziaur Rahman, formally beginning the Bangladesh Liberation War.",
-    imageUrl: "https://images.pexels.com/photos/4055964/pexels-photo-4055964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/images/hs10.png",
     content: [
       "In the early hours of March 26, 1971, shortly before his arrest by Pakistani forces, Sheikh Mujibur Rahman declared the independence of Bangladesh. According to multiple accounts, he sent a message that was transmitted via a police wireless network to various parts of East Pakistan.",
       "The declaration was brief but definitive: 'This may be my last message. From today Bangladesh is independent. I call upon the people of Bangladesh, wherever you are and with whatever you have, to resist the occupation army. Fight until the last soldier of the Pakistan occupation army is expelled from the soil of Bangladesh. Final victory is ours.'",
@@ -268,7 +268,7 @@ export const eventsData = [
     title: "Liberation War (March-December 1971)",
     date: "March-December 1971",
     summary: "The nine-month Liberation War involved Bengali guerrilla forces (Mukti Bahini) fighting against the Pakistani military, resulting in widespread atrocities, millions of refugees, and eventual Indian military intervention.",
-    imageUrl: "https://images.pexels.com/photos/78783/pexels-photo-78783.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/images/hs11.png",
     content: [
       "The Bangladesh Liberation War was a nine-month armed conflict that began with the declaration of independence on March 26, 1971, and concluded with Pakistan's surrender on December 16, 1971. The war pitted Bengali nationalist forces against the Pakistani military and pro-Pakistani local militias.",
       "The Mukti Bahini (Liberation Force) formed the core of the Bengali resistance. Initially comprising defecting Bengali soldiers and police, it grew to include thousands of civilian volunteers. The force was organized into 11 sectors under the command of the Provisional Government of Bangladesh, with military coordination provided by Indian advisors.",
@@ -301,7 +301,7 @@ export const eventsData = [
     title: "India-Pakistan War (Dec 3-16, 1971)",
     date: "December 3-16, 1971",
     summary: "India formally entered the war after Pakistani preemptive air strikes, launching a coordinated military campaign across East Pakistan that rapidly overwhelmed Pakistani forces and accelerated their defeat.",
-    imageUrl: "https://images.pexels.com/photos/4017966/pexels-photo-4017966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/images/hs12.png",
     content: [
       "The Indo-Pakistani War of 1971 began on December 3, when Pakistan launched preemptive air strikes on Indian airfields in an attempt to replicate the Israeli success in the 1967 Six-Day War. This attack, known as Operation Chengiz Khan, provided India with the justification to formally enter the conflict in East Pakistan, where it had previously provided limited support to the Mukti Bahini.",
       "India's military response was swift and comprehensive. The Indian Army, working alongside Mukti Bahini forces, launched a three-pronged attack into East Pakistan. The Indian Air Force quickly established air superiority, while the Indian Navy blockaded East Pakistan's ports, effectively cutting off reinforcement and supply routes from West Pakistan.",
@@ -334,7 +334,7 @@ export const eventsData = [
     title: "Pakistani Surrender (Dec 16, 1971)",
     date: "December 16, 1971",
     summary: "Lieutenant General A.A.K. Niazi of Pakistan signed the Instrument of Surrender, formally ending the war and recognizing Bangladesh as an independent nation, with approximately 93,000 Pakistani soldiers becoming prisoners of war.",
-    imageUrl: "https://images.pexels.com/photos/1098365/pexels-photo-1098365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/images/hs13.png",
     content: [
       "On December 16, 1971, at 4:31 PM, Lieutenant General Amir Abdullah Khan Niazi, the Commander of Pakistani forces in East Pakistan, signed the Instrument of Surrender at the Ramna Race Course (now Suhrawardy Udyan) in Dhaka. Lieutenant General Jagjit Singh Aurora, the Commander of Indian forces in the Eastern Theatre, accepted the surrender.",
       "The surrender ceremony, witnessed by thousands of jubilant Bengalis, marked the formal end of the nine-month liberation war and the birth of Bangladesh as an independent nation. Approximately 93,000 Pakistani soldiers and officials became prisoners of war, constituting one of the largest surrenders since World War II.",
