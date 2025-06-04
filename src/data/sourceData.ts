@@ -12,7 +12,7 @@ export const sourceData = [
     author: "Rafiqul Islam",
     publication: "SciSpace",
     year: "2007",
-    url: "https://scispace.com/paper/10.2307/20836482",
+    url: "https://scispace.com/papers/the-bengali-language-movement-and-emergence-of-bangladesh-45yfqvdwwh",
     category: "Language Movement"
   },
   {
@@ -146,9 +146,9 @@ export const sourceData = [
   {
     title: "The Participation of Women in the Liberation War of Bangladesh in 1971: A Historical Analysis",
     author: "",
-    publication: "AJHSSR",
+    publication: "Tahmina",
     year: "",
-    url: "https://www.ajhssr.com/wp-content/uploads/2019/07/N19347274.pdf",
+    url: "https://www.researchgate.net/publication/343671906_The_Participation_of_women_in_the_Liberation_War_of_Bangladesh_in_1971_A_Historical_Analysis",
     category: "Liberation War"
   },
   {
