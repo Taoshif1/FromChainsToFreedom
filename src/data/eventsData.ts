@@ -3,9 +3,9 @@ export const eventsData = [
     id: "event1",
     slug: "1948-opposing-jinnah",
     title: "Opposing Jinnah (1948)",
-    date: "March 21, 1948",
+    date: "February 11, 1948",
     summary: "Muhammad Ali Jinnah's declaration that 'Urdu and Urdu alone' would be Pakistan's state language sparked immediate resistance from East Pakistan's Bengali-speaking majority, marking the first major conflict between the two wings of Pakistan.",
-    imageUrl: "https://images.pexels.com/photos/3698049/pexels-photo-3698049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/public/images/hs2.png",
     content: [
       "On March 21, 1948, Pakistan's founding father and Governor-General Muhammad Ali Jinnah addressed a public meeting at Ramna Race Course in Dhaka (then part of East Pakistan). In his speech, Jinnah declared that 'Urdu and Urdu alone' would be Pakistan's state language. This statement sparked immediate resistance from East Pakistan's Bengali-speaking majority.",
       "Student leaders, including Dhirendranath Datta, openly challenged Jinnah's position, marking one of the first instances of public opposition to the central government's policies. This moment is historically significant as it represented the first major conflict between the two wings of Pakistan and planted the seeds for the subsequent Language Movement.",
@@ -28,7 +28,7 @@ export const eventsData = [
     title: "Language Movement (1952)",
     date: "February 21, 1952",
     summary: "Students and activists protested against the Pakistani government's refusal to recognize Bengali as an official language. Police fired on protesters, killing several students and triggering widespread outrage that galvanized Bengali national consciousness.",
-    imageUrl: "https://images.pexels.com/photos/6147134/pexels-photo-6147134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/public/images/hs3.png",
     content: [
       "The Language Movement reached its climax on February 21, 1952, when students from Dhaka University and other institutions, along with political activists, defied Section 144 (a ban on public gatherings) to protest for the recognition of Bengali as a state language of Pakistan.",
       "As the protesters marched near the East Bengal Legislative Assembly, police opened fire on the crowd. Several students including Rafiq Uddin Ahmed, Abul Barkat, Abdul Jabbar, and Abdus Salam were killed. This violent crackdown sparked widespread outrage throughout East Pakistan.",
@@ -57,7 +57,7 @@ export const eventsData = [
     title: "Six-Point Autonomy Demand (1966)",
     date: "February 5, 1966",
     summary: "Sheikh Mujibur Rahman presented the Six-Point Movement, a charter of demands for regional autonomy that became the foundation for East Pakistan's struggle for self-determination, leading to his arrest and widespread protests.",
-    imageUrl: "https://images.pexels.com/photos/2774546/pexels-photo-2774546.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/public/images/hs4.png",
     content: [
       "On February 5, 1966, Sheikh Mujibur Rahman, the leader of the Awami League, presented the 'Six Points' at a national conference of opposition political parties in Lahore. This program would become the foundation for East Pakistan's struggle for autonomy and eventually independence.",
       "The Six Points demanded: (1) A federal constitution with parliamentary democracy; (2) Federal government authority limited to defense and foreign affairs; (3) Separate currencies or financial autonomy for each wing; (4) Taxation powers for the federating units; (5) Foreign exchange earnings control by the respective wings; (6) A separate militia or paramilitary force for East Pakistan.",
@@ -86,7 +86,7 @@ export const eventsData = [
     title: "Mass Uprising (1969)",
     date: "January-March 1969",
     summary: "A student-led mass uprising against the Ayub Khan regime culminated in widespread civil unrest, the withdrawal of the Agartala Conspiracy Case, and Sheikh Mujibur Rahman's release, forcing President Ayub Khan to resign.",
-    imageUrl: "https://images.pexels.com/photos/2265488/pexels-photo-2265488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: "/public/images/hs5.png",
     content: [
       "The Mass Uprising of 1969 was a student-led movement that began in January and gained momentum through March 1969. It was triggered by the growing discontent with the Ayub Khan regime and the controversial Agartala Conspiracy Case against Sheikh Mujibur Rahman and 34 others, which alleged they were conspiring with India to separate East Pakistan.",
       "On January 20, 1969, police opened fire on student demonstrators at Dhaka University, killing student leader Asad and several others. This incident sparked widespread civil unrest throughout East Pakistan. The Sarbadaliya Chhatra Sangram Parishad (All-Party Student Resistance Council) led by Tofail Ahmed formulated an 11-point program that expanded beyond Mujib's Six Points to include demands relevant to students and workers.",

@@ -4,33 +4,42 @@ import { eventsData } from '../data/eventsData'; // Assuming this path is correc
 
 const HomePage = () => {
   // Get a few featured events - let's take the first 3 for example
-  // You can adjust this logic to pick specific featured events if needed
   const featuredEvents = eventsData.slice(0, 3);
-  // If you want to ensure there are always events, add a check:
-  // const featuredEvents = eventsData.length >= 3 ? eventsData.slice(0, 3) : eventsData;
 
+  // Define the specific images for the featured event cards on the homepage
+  // IMPORTANT: Ensure hs2.png, hs3.png, hs4.png are in your public/images/ folder
+  const featuredEventImages = [
+    '/images/hs2.png', // For the first featured event
+    '/images/hs3.png', // For the second featured event
+    '/images/hs4.png', // For the third featured event
+  ];
 
   return (
     <div className="animate-fade-in">
-      {/* Hero Section */}
-      <section className="relative bg-neutral-900 text-white">
-        <div
-          className="absolute inset-0 bg-center bg-cover opacity-30"
-          style={{
-            backgroundImage: `url(https://images.pexels.com/photos/3698049/pexels-photo-3698049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)`, // Replace with your desired hero image
-          }}
-        ></div>
-        <div className="container-custom relative z-10 py-20 md:py-32">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="mb-4 font-bold font-opensans">The Path to Independence</h1> {/* Ensure font-opensans if h1 default is georgia */}
-            <p className="text-lg md:text-xl mb-8 text-neutral-100 font-georgia"> {/* Ensure font-georgia if p default is opensans */}
-              Explore the defining moments in Bangladesh's birth from 1948 to 1971
+      {/* Hero Section - Updated with hs1.png and parallax preparation */}
+      <section 
+        className="relative text-white h-screen flex flex-col justify-center items-center" // Ensure h-screen for full viewport, added flex for centering
+        style={{
+          backgroundImage: `url(/images/hs1.png)`, // Path to your hs1.png
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed', // This creates the parallax effect
+        }}
+      >
+        {/* Overlay for text readability - Placed inside the section */}
+        <div 
+          className="absolute inset-0 bg-neutral-900 opacity-50 z-0"> 
+        </div>
+
+        <div className="container-custom relative z-10 py-20 md:py-32 text-center"> {/* Ensure text is above overlay */}
+          <div className="max-w-3xl mx-auto">
+            <h1 className="mb-4 font-bold font-opensans text-4xl sm:text-5xl md:text-6xl lg:text-7xl">From Chains To Freedom</h1>
+            <p className="text-lg md:text-xl lg:text-2xl mb-8 text-neutral-100 font-georgia">
+              Explore the lesser talked historical moments in Bangladesh's birth from 1948 to 1971
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
               <Link
                 to="/timeline"
-                // btn-primary: bg-primary-600 text-white hover:bg-primary-700
-                // Added explicit hover:text-white to ensure text remains visible
                 className="btn bg-primary-600 text-white hover:bg-primary-700 hover:text-white"
               >
                 <Clock className="mr-2 h-5 w-5" />
@@ -38,9 +47,6 @@ const HomePage = () => {
               </Link>
               <Link
                 to="/events"
-                // Custom styling for outline button on dark background
-                // Initial: transparent bg (implicitly), white border, white text
-                // Hover: white bg, dark text (e.g., text-primary-800 or text-neutral-800)
                 className="btn border-2 border-white text-white hover:bg-white hover:text-primary-800 transition-colors duration-300"
               >
                 <Book className="mr-2 h-5 w-5" />
@@ -55,9 +61,8 @@ const HomePage = () => {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-center mb-8 text-primary-800 font-opensans">Introduction</h2> {/* Ensure font-opensans */}
-            {/* Consider adding Tailwind 'prose' class for better typography if you have the plugin */}
-            <div className="mx-auto text-neutral-800 font-georgia"> {/* Ensure font-georgia */}
+            <h2 className="text-center mb-8 text-primary-800 font-opensans">Introduction</h2>
+            <div className="mx-auto text-neutral-800 font-georgia prose prose-lg">
               <p>
                 The journey to Bangladesh's independence was marked by profound struggles for linguistic, cultural,
                 and political rights, culminating in a devastating war and the birth of a new nation. This website
@@ -78,7 +83,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Featured Events Section - Now shows multiple events */}
+      {/* Featured Events Section */}
       <section className="py-16 bg-neutral-100">
         <div className="container-custom">
           <h2 className="text-center mb-2 text-primary-800 font-opensans">Featured Events</h2>
@@ -86,12 +91,14 @@ const HomePage = () => {
 
           {featuredEvents.length > 0 ? (
             <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-              {featuredEvents.map((event) => (
-                <div key={event.id} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col event-card hover:-translate-y-1 transition-all duration-300"> {/* Added hover:-translate-y-1 and transition-all */}
+              {featuredEvents.map((event, index) => ( // Added index here
+                <div key={event.id} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col event-card hover:-translate-y-1.5 transition-all duration-300">
                   <div
-                    className="h-56 w-full bg-center bg-cover" // Fixed height for images
+                    className="h-56 w-full bg-center bg-cover"
                     style={{
-                      backgroundImage: `url(${event.imageUrl})`,
+                      // Use the specific image for the card based on its index,
+                      // or fallback to event.imageUrl if not enough specific images are provided
+                      backgroundImage: `url(${featuredEventImages[index] || event.imageUrl || 'https://placehold.co/600x400/cccccc/333333?text=Event+Image'})`,
                     }}
                   ></div>
                   <div className="p-6 flex flex-col flex-grow">
@@ -120,13 +127,12 @@ const HomePage = () => {
       </section>
 
       {/* Explore Sections (Timeline, Events, Gallery links) */}
-      <section className="py-16 bg-white"> {/* Parent section remains white */}
+      <section className="py-16 bg-white">
         <div className="container-custom">
-          {/* Added Title for Explore More Section */}
           <h2 className="text-center mb-12 text-primary-800 font-opensans">Explore More</h2>
           <div className="grid md:grid-cols-3 gap-8 text-center">
-            {/* Timeline Card - Changed background to bg-neutral-100, added border, and hover effect */}
-            <div className="bg-neutral-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col border border-neutral-200 hover:-translate-y-1">
+            {/* Timeline Card */}
+            <div className="bg-neutral-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col border border-neutral-200 hover:-translate-y-1.5">
               <div className="bg-primary-100 p-4 inline-block rounded-full mb-6 mx-auto">
                 <Clock className="h-8 w-8 text-primary-600" />
               </div>
@@ -144,8 +150,8 @@ const HomePage = () => {
               </Link>
             </div>
 
-            {/* Events Card - Changed background to bg-neutral-100, added border, and hover effect */}
-            <div className="bg-neutral-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col border border-neutral-200 hover:-translate-y-1">
+            {/* Events Card */}
+            <div className="bg-neutral-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col border border-neutral-200 hover:-translate-y-1.5">
               <div className="bg-primary-100 p-4 inline-block rounded-full mb-6 mx-auto">
                 <Book className="h-8 w-8 text-primary-600" />
               </div>
@@ -163,8 +169,8 @@ const HomePage = () => {
               </Link>
             </div>
 
-            {/* Gallery Card - Changed background to bg-neutral-100, added border, and hover effect */}
-            <div className="bg-neutral-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col border border-neutral-200 hover:-translate-y-1">
+            {/* Gallery Card */}
+            <div className="bg-neutral-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col border border-neutral-200 hover:-translate-y-1.5">
               <div className="bg-primary-100 p-4 inline-block rounded-full mb-6 mx-auto">
                 <Image className="h-8 w-8 text-primary-600" />
               </div>
