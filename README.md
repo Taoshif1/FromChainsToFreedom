@@ -41,36 +41,6 @@
 
 ---
 
-## 🛠️ Getting Started & Local Development
-
-To run this project locally:
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/Taoshif1/FromChainsToFreedom.git](https://github.com/Taoshif1/FromChainsToFreedom.git)
-    cd FromChainsToFreedom
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-    (or `yarn install` if you prefer Yarn)
-
-3.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
-    This will start the Vite development server, typically on `http://localhost:5173`.
-
-4.  **Build for production:**
-    ```bash
-    npm run build
-    ```
-    This will create an optimized build in the `dist` folder.
-
----
-
 ## Inspiration
 
 This project, **"From Chains to Freedom,"** springs from a place deep within our hearts. As this was our very first hackathon, the excitement and eagerness to embark on this journey were immense. Faced with the challenge of choosing a historical event, the most compelling and deeply personal choice was to tell the story of our own country, Bangladesh. Our homeland's path to sovereignty is not merely a sequence of dates. it's a profound saga of unyielding resilience, of pain that carved rivers of sorrow and of a pride that now stands as resolute as the Himalayas. Coming from families whose own histories are interwoven with the valor of our freedom fighters, we felt an undeniable, almost spiritual obligation to share this narrative. This isn't just a hackathon, it's an act of remembrance, a digital homage to the indomitable spirit of our people.
@@ -127,6 +97,36 @@ This Hackstory journey has been an incredible learning experience:
 
 **Gazi Taoshif**
 **B.Sc. in Computer Science & Engineering**
+
+---
+
+## 🛠️ Getting Started & Local Development
+
+To run this project locally:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/Taoshif1/FromChainsToFreedom.git](https://github.com/Taoshif1/FromChainsToFreedom.git)
+    cd FromChainsToFreedom
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+    (or `yarn install` if you prefer Yarn)
+
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    This will start the Vite development server, typically on `http://localhost:5173`.
+
+4.  **Build for production:**
+    ```bash
+    npm run build
+    ```
+    This will create an optimized build in the `dist` folder.
 
 ---
 
