@@ -10,7 +10,7 @@
 
 ---
 
-# This project was developed for the **Hackathon - Hackstory (Create a Website about a historical event) for DevPost Powered by BOLT**.
+# This project was developed for the **DevPost Hackathon - Hackstory (Create a Website about a historical event) Powered by BOLT**.
 
 ---
 
