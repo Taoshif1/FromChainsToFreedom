@@ -90,7 +90,7 @@ This Hackstory journey has been an incredible learning experience:
 
 * The **Hackstory & DevPost** organizers for this inspiring event.
 * The various historical archives, academic sources (Wikipedia, Britannica, Banglapedia, BBC, etc.) and news outlets that provided the foundational research material.
-* **Bolt AI** for assistance in brainstorming, refining prompts and structuring content during the development process.
+* **Bolt AI** for assistance and structuring content during the development process.
 
 ---
 
